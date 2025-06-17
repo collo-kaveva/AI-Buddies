@@ -1,4 +1,4 @@
-# CryptoBuddy - Your First AI-Powered Financial Sidekick!
+# CryptoBuddy - Your First AI-Powered Financial Sidekick!..
 # A beginner-friendly crypto advisor chatbot with basic AI logic in Python.
 
 crypto_db = {
