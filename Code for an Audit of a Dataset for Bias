@@ -1,0 +1,49 @@
+import pandas as pd
+from aif360.datasets import StandardDataset
+from aif360.metrics import BinaryLabelDatasetMetric
+from aif360.algorithms.preprocessing import Reweighing
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Load the COMPAS dataset
+data = pd.read_csv('./compas-scores-two-years.csv')
+
+# Preprocess the dataset
+data = data[(data['days_b_screening_arrest'] <= 30) & 
+            (data['days_b_screening_arrest'] >= -30) & 
+            (data['is_recid'] != -1) & 
+            (data['c_charge_degree'] != 'O') & 
+            (data['v_score_text'] != 'N/A')]
+
+# Create a StandardDataset
+dataset = StandardDataset(data, 
+                          label_name='two_year_recid', 
+                          favorable_classes=[1], 
+                          protected_attribute_names=['race'], 
+                          privileged_classes=[['Caucasian']])
+
+# Calculate metrics
+metric = BinaryLabelDatasetMetric(dataset, 
+                                   unprivileged_groups=[{'race': 'African-American'}], 
+                                   privileged_groups=[{'race': 'Caucasian'}])
+
+# Print metrics
+print("Disparate Impact: ", metric.disparate_impact())
+print("False Positive Rate: ", metric.false_positive_rate())
+print("True Positive Rate: ", metric.true_positive_rate())
+
+# Visualize false positive rates
+race_groups = data['race'].value_counts().index
+false_positive_rates = [metric.false_positive_rate(unprivileged_groups=[{'race': race}]) for race in race_groups]
+
+plt.figure(figsize=(10, 6))
+sns.barplot(x=race_groups, y=false_positive_rates)
+plt.title('False Positive Rates by Race')
+plt.xlabel('Race')
+plt.ylabel('False Positive Rate')
+plt.show()
+
+# Remediation using Reweighing
+rw = Reweighing(unprivileged_groups=[{'race': 'African-American'}], 
+                privileged_groups=[{'race': 'Caucasian'}])
+dataset_transformed = rw.fit_transform(dataset)
