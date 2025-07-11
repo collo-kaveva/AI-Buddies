@@ -1,0 +1,64 @@
+Case 1: Biased Hiring Tool
+
+Scenario: Amazon’s AI recruiting tool penalized female candidates.
+
+Tasks:
+
+Identify the source of bias (e.g., training data, model design).
+The source of bias in Amazon’s AI recruiting tool that penalized female candidates primarily stems from training data. The model was trained on resumes submitted to the company over a period of time, which were predominantly from male candidates. This historical data reflected existing gender biases in the hiring process, leading the AI to favor male candidates over female candidates.
+
+
+Propose three fixes to make the tool fairer.
+Diverse and Representative Training Data:
+Curate a more balanced and diverse dataset that includes a representative sample of resumes from various genders, ethnicities, and backgrounds. This can involve actively sourcing resumes from underrepresented groups and ensuring that the training data reflects a more equitable distribution of candidates.
+
+Bias Detection and Mitigation Techniques:
+Implement bias detection algorithms during the training process to identify and mitigate biases. Techniques such as re-weighting, adversarial debiasing, or using fairness constraints can be applied to adjust the model's learning process.
+
+Regular Audits and Feedback Loops:
+ Establish a system for regular audits of the AI tool's performance, focusing on its impact on different demographic groups. Incorporate feedback loops where hiring managers and candidates can report biases or issues encountered during the hiring process.
+
+
+Suggest metrics to evaluate fairness post-correction. 
+Demographic Parity:
+Measure the proportion of candidates from different demographic groups (e.g., gender, ethnicity) who are selected for interviews or job offers
+
+Equal Opportunity:
+Assess the true positive rates for different demographic groups. This metric evaluates whether qualified candidates from all groups have an equal chance of being selected.
+
+Disparate Impact Ratio:
+Calculate the ratio of selection rates between different demographic groups. A ratio of less than 0.8 (the "four-fifths rule") may indicate potential bias.
+
+
+
+
+Case 2: Facial Recognition in Policing
+
+A facial recognition system misidentifies minorities at higher rates.
+
+Tasks:
+
+Discuss ethical risks
+Wrongful Arrests:Higher misidentification rates for minorities can lead to wrongful arrests and legal consequences for innocent individuals. This can result in significant emotional distress, loss of reputation, and financial burdens for those affected.
+
+Discrimination and Bias: The use of biased facial recognition technology can perpetuate systemic discrimination against minority groups. If law enforcement relies on these systems, it may disproportionately target certain communities, exacerbating existing inequalities.
+
+Privacy Violations: Facial recognition systems often operate without individuals' consent, raising significant privacy concerns. The constant surveillance and tracking of individuals can infringe on personal freedoms and autonomy.
+
+Data Security Risks: The storage and processing of facial recognition data can pose security risks. If data is not adequately protected, it may be vulnerable to breaches, leading to unauthorized access and misuse of personal information.
+
+
+
+Recommend policies for responsible deployment.
+Rigorous Testing and Validation: Require comprehensive testing of facial recognition systems for accuracy across diverse demographic groups before deployment. This should include evaluating performance metrics specifically for minority populations to identify and mitigate biases.
+
+Transparency and Accountability: Mandate transparency in the use of facial recognition technology, including clear communication about how the technology works, its limitations, and the data it collects. Establish accountability mechanisms for law enforcement agencies using these systems.
+
+Consent and Opt-Out Options:  Implement policies that require explicit consent from individuals before their images are captured and processed by facial recognition systems. Provide opt-out options for individuals who do not wish to be included in such databases.
+
+Regular Audits and Community Engagement: Conduct regular audits of facial recognition systems to assess their impact on different communities and ensure compliance with ethical standards. Engage with community stakeholders to gather feedback and address concerns.
+
+Limitations on Use:  Establish clear guidelines on the appropriate use of facial recognition technology, restricting its application to specific, justified scenarios (e.g., serious criminal investigations) and prohibiting its use for routine surveillance or minor offenses.
+
+
+
